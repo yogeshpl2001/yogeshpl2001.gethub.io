@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7f1e7">
+<meta name="description" content="A bilingual wedding invitation. Join us to celebrate love, family, and a new beginning.">
+<title>Wedding Invitation | A Celebration of Love</title>
+<style>
+  :root{
+    --cream:#f7f1e7; --paper:#fffdf8; --ink:#28251f; --muted:#71695d;
+    --gold:#a77b35; --gold-light:#d9bd83; --line:#e7dcc9; --green:#45584b;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+  a{color:inherit}
+  .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px clamp(18px,5vw,64px);border-bottom:1px solid var(--line);background:rgba(255,253,248,.88)}
+  .brand{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-family:Arial,sans-serif}
+  .nav{display:flex;gap:18px;align-items:center;font: .78rem Arial,sans-serif}
+  .nav a{text-decoration:none;color:var(--muted)}
+  .lang-btn{border:1px solid var(--gold);background:transparent;color:var(--ink);padding:9px 12px;border-radius:99px;cursor:pointer;font: .78rem Arial,sans-serif}
+  .hero{min-height:82vh;display:grid;place-items:center;padding:64px 20px;position:relative;overflow:hidden;background:
+    radial-gradient(ellipse at 12% 18%,rgba(217,189,131,.18),transparent 28%),
+    radial-gradient(ellipse at 88% 80%,rgba(69,88,75,.09),transparent 30%),var(--paper)}
+  .hero:before,.hero:after{content:"";position:absolute;width:240px;height:240px;border:1px solid var(--gold-light);border-radius:50%;opacity:.6}
+  .hero:before{top:-150px;left:-100px}.hero:after{bottom:-160px;right:-90px}
+  .hero-inner{max-width:760px;text-align:center;position:relative;z-index:1}
+  .eyebrow{font: .72rem Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+  .ornament{color:var(--gold);font-size:1.5rem;margin:20px 0}
+  h1{font-size:clamp(2.8rem,8vw,6rem);line-height:1.02;font-weight:400;margin:18px 0}
+  .amp{font-style:italic;color:var(--gold);font-size:.72em}
+  .sub{font-size:1.05rem;line-height:1.8;color:var(--muted);max-width:580px;margin:20px auto}
+  .kannada{font-family:"Noto Serif Kannada","Tunga",serif;line-height:1.9}
+  .date-pill{display:inline-block;margin-top:16px;border-top:1px solid var(--gold-light);border-bottom:1px solid var(--gold-light);padding:12px 22px;font: .82rem Arial,sans-serif;letter-spacing:.12em}
+  .button{display:inline-block;text-decoration:none;background:var(--green);color:#fffdf8;border:1px solid var(--green);padding:13px 20px;border-radius:2px;font: .78rem Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;margin:10px 6px;transition:.2s}
+  .button:hover{transform:translateY(-2px);background:#34473a}
+  .button.outline{background:transparent;color:var(--green)}
+  section{padding:76px 20px}
+  .section-inner{max-width:1000px;margin:auto}
+  .section-head{text-align:center;margin-bottom:36px}
+  h2{font-weight:400;font-size:clamp(2rem,4vw,3.1rem);margin:10px 0}
+  .section-head p{color:var(--muted);line-height:1.7}
+  .story{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+  .story-card{padding:30px;border:1px solid var(--line);background:var(--paper);text-align:center}
+  .monogram{width:64px;height:64px;border:1px solid var(--gold-light);border-radius:50%;display:grid;place-items:center;margin:0 auto 18px;color:var(--gold);font-size:1.5rem}
+  .story-card h3{font-size:1.6rem;font-weight:400;margin:10px 0}
+  .story-card p{font: .9rem/1.8 Arial,sans-serif;color:var(--muted)}
+  .countdown-section{background:#e9e1d3}
+  .countdown{display:flex;justify-content:center;gap:clamp(10px,3vw,30px);flex-wrap:wrap;margin:30px 0}
+  .time-box{min-width:90px;text-align:center;padding:18px 16px;background:rgba(255,253,248,.75);border:1px solid #d9cbb4}
+  .time-box strong{display:block;font-size:2rem;font-weight:400;color:var(--green)}
+  .time-box span{display:block;margin-top:5px;font: .7rem Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .photo{min-height:240px;position:relative;overflow:hidden;background:#ded1bc;border:1px solid var(--line)}
+  .photo img{width:100%;height:100%;min-height:240px;object-fit:cover;display:block;transition:transform .5s}
+  .photo:hover img{transform:scale(1.04)}
+  .photo .placeholder{height:100%;min-height:240px;display:grid;place-items:center;text-align:center;padding:18px;background:linear-gradient(145deg,#eee4d3,#d5c4a5);color:#65543c;font: .82rem/1.7 Arial,sans-serif}
+  .venue-card{max-width:700px;margin:auto;text-align:center;background:var(--paper);border:1px solid var(--line);padding:clamp(25px,5vw,48px)}
+  .venue-card p{color:var(--muted);line-height:1.8}
+  .details{font: .9rem/2 Arial,sans-serif;color:var(--muted)}
+  footer{text-align:center;padding:28px 16px;background:#2f3e34;color:#f7f1e7;font: .75rem/1.8 Arial,sans-serif;letter-spacing:.04em}
+  .hidden{display:none!important}
+  @media(max-width:680px){
+    .nav a{display:none}.story{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.photo,.photo img,.photo .placeholder{min-height:190px}
+    .hero{min-height:76vh}.topbar{padding:13px 16px}
+  }
+  @media(max-width:420px){.gallery{grid-template-columns:1fr}.photo,.photo img,.photo .placeholder{min-height:230px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">The Wedding Invitation</div>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#couple">Couple</a><a href="#gallery">Gallery</a><a href="#venue">Venue</a>
+    <button class="lang-btn" id="languageToggle" type="button">ಕನ್ನಡ / English</button>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="eyebrow">Together with our families</div>
+      <div class="ornament">✦ ❧ ✦</div>
+      <p class="kannada" lang="kn">ಪ್ರೀತಿ, ಸಂತೋಷ ಮತ್ತು ಆಶೀರ್ವಾದಗಳೊಂದಿಗೆ ನಮ್ಮ ವಿವಾಹ ಸಮಾರಂಭಕ್ಕೆ ನಿಮ್ಮನ್ನು ಆತ್ಮೀಯವಾಗಿ ಆಹ್ವಾನಿಸುತ್ತೇವೆ.</p>
+      <p>With love, joy, and the blessings of our families, we invite you to celebrate our wedding.</p>
+      <h1><span id="brideName">Bride Name</span><br><span class="amp">&amp;</span><br><span id="groomName">Groom Name</span></h1>
+      <div class="date-pill"><span id="dateDisplay">YOUR WEDDING DATE</span> · <span id="timeDisplay">YOUR MUHURTHAM TIME</span></div>
+      <p class="sub kannada" lang="kn">ನಿಮ್ಮ ಆಗಮನವೇ ನಮಗೆ ಆಶೀರ್ವಾದ. ಈ ವಿಶೇಷ ದಿನವನ್ನು ನಮ್ಮೊಂದಿಗೆ ಆಚರಿಸಿ.</p>
+      <p class="sub">Your presence will make our special day even more memorable.</p>
+      <a class="button" href="#venue">View Venue / ಸ್ಥಳ</a>
+      <a class="button outline" href="#gallery">Our Gallery / ಚಿತ್ರಗಳು</a>
+    </div>
+  </section>
+
+  <section id="couple">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="eyebrow">Two hearts, one journey</div>
+        <h2>Our Celebration</h2>
+        <p class="kannada" lang="kn">ಹೊಸ ಜೀವನದ ಆರಂಭಕ್ಕೆ ನಿಮ್ಮ ಪ್ರೀತಿ ಮತ್ತು ಆಶೀರ್ವಾದಗಳನ್ನು ಕೋರುತ್ತೇವೆ.</p>
+        <p>We would be honoured to have you with us as we begin this beautiful new chapter.</p>
+      </div>
+      <div class="story">
+        <article class="story-card"><div class="monogram">♡</div><div class="eyebrow">The Bride</div><h3 id="brideNameCard">Bride Name</h3><p id="brideFamily">Daughter of [Bride's parents' names]</p></article>
+        <article class="story-card"><div class="monogram">♡</div><div class="eyebrow">The Groom</div><h3 id="groomNameCard">Groom Name</h3><p id="groomFamily">Son of [Groom's parents' names]</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="countdown-section" id="countdownSection">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="eyebrow">The big day is coming</div><h2>Counting the Moments</h2>
+        <p class="kannada" lang="kn">ನಮ್ಮ ವಿಶೇಷ ದಿನಕ್ಕೆ ಇನ್ನಷ್ಟು ಕ್ಷಣಗಳು ಮಾತ್ರ!</p>
+        <p>We can't wait to celebrate with you.</p>
+      </div>
+      <div class="countdown" aria-live="polite">
+        <div class="time-box"><strong id="days">--</strong><span>Days</span></div>
+        <div class="time-box"><strong id="hours">--</strong><span>Hours</span></div>
+        <div class="time-box"><strong id="minutes">--</strong><span>Minutes</span></div>
+        <div class="time-box"><strong id="seconds">--</strong><span>Seconds</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="section-inner">
+      <div class="section-head"><div class="eyebrow">A few favourite moments</div><h2>Photo Gallery</h2><p class="kannada" lang="kn">ನಮ್ಮ ಸುಂದರ ನೆನಪುಗಳ ಕೆಲವು ಕ್ಷಣಗಳು.</p><p>Replace these sample panels with your own photos before sharing the site.</p></div>
+      <div class="gallery">
+        <div class="photo"><div class="placeholder">PHOTO 01<br>Replace with your couple photo</div></div>
+        <div class="photo"><div class="placeholder">PHOTO 02<br>Replace with a family photo</div></div>
+        <div class="photo"><div class="placeholder">PHOTO 03<br>Replace with a favourite memory</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="venue" style="background:#f1e9dc">
+    <div class="section-inner">
+      <div class="section-head"><div class="eyebrow">We saved you a place</div><h2>Wedding Venue</h2><p class="kannada" lang="kn">ನಿಮ್ಮ ಆಗಮನಕ್ಕಾಗಿ ಕಾತರದಿಂದ ಕಾಯುತ್ತಿದ್ದೇವೆ.</p><p>We look forward to celebrating with you.</p></div>
+      <div class="venue-card">
+        <div class="ornament">⌖</div><h2 id="venueName">Wedding Hall Name</h2>
+        <p id="venueAddress">Enter the full venue address, city, and any helpful directions here.</p>
+        <div class="details"><div><strong>Date:</strong> <span id="venueDate">Your wedding date</span></div><div><strong>Time:</strong> <span id="venueTime">Your ceremony time</span></div></div>
+        <a class="button" id="mapsLink" href="https://maps.google.com/" target="_blank" rel="noopener noreferrer">Get Directions / ಮಾರ್ಗ</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner section-head">
+      <div class="ornament">✦</div>
+      <h2>With Love & Blessings</h2>
+      <p class="kannada" lang="kn">ನಿಮ್ಮ ಪ್ರೀತಿ, ಹಾರೈಕೆ ಮತ್ತು ಆಶೀರ್ವಾದಗಳೇ ನಮ್ಮ ಸಂತೋಷ.</p>
+      <p>Thank you for being part of our happiness. We can't wait to see you!</p>
+    </div>
+  </section>
+</main>
+<footer>
+  Made with love for our special day · <span id="footerNames">Bride Name & Groom Name</span><br>
+  <span class="kannada" lang="kn">ಪ್ರೀತಿಯಿಂದ ಆಹ್ವಾನಿಸುತ್ತೇವೆ</span>
+</footer>
+
+<script>
+/*
+  QUICK CUSTOMISATION:
+  Edit the values below. Use a date/time in your local timezone.
+  Example: weddingDate: "2026-12-03T10:30:00+05:30"
+  For Google Maps, paste the venue's Google Maps sharing URL into mapsUrl.
+*/
+const wedding = {
+  brideName: "Bride Name",
+  groomName: "Groom Name",
+  brideFamily: "Daughter of [Bride's parents' names]",
+  groomFamily: "Son of [Groom's parents' names]",
+  weddingDate: "2026-12-03T10:30:00+05:30",
+  dateText: "3 DECEMBER 2026",
+  timeText: "10:30 AM",
+  venueName: "Wedding Hall Name",
+  venueAddress: "Enter the full venue address, city, and any helpful directions here.",
+  mapsUrl: "https://maps.google.com/"
+};
+
+const setText = (id, value) => { const el = document.getElementById(id); if (el) el.textContent = value; };
+setText("brideName", wedding.brideName);
+setText("groomName", wedding.groomName);
+setText("brideNameCard", wedding.brideName);
+setText("groomNameCard", wedding.groomName);
+setText("brideFamily", wedding.brideFamily);
+setText("groomFamily", wedding.groomFamily);
+setText("dateDisplay", wedding.dateText);
+setText("timeDisplay", wedding.timeText);
+setText("venueName", wedding.venueName);
+setText("venueAddress", wedding.venueAddress);
+setText("venueDate", wedding.dateText);
+setText("venueTime", wedding.timeText);
+setText("footerNames", wedding.brideName + " & " + wedding.groomName);
+document.getElementById("mapsLink").href = wedding.mapsUrl;
+
+const target = new Date(wedding.weddingDate).getTime();
+function updateCountdown() {
+  const now = Date.now();
+  let distance = target - now;
+  if (Number.isNaN(target)) { setText("days","--"); setText("hours","--"); setText("minutes","--"); setText("seconds","--"); return; }
+  if (distance <= 0) {
+    setText("days","0"); setText("hours","0"); setText("minutes","0"); setText("seconds","0");
+    return;
+  }
+  setText("days", Math.floor(distance / 86400000));
+  setText("hours", Math.floor((distance % 86400000) / 3600000));
+  setText("minutes", Math.floor((distance % 3600000) / 60000));
+  setText("seconds", Math.floor((distance % 60000) / 1000));
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// Simple bilingual toggle: temporarily emphasise the selected language while keeping both available.
+let kannadaFirst = true;
+document.getElementById("languageToggle").addEventListener("click", () => {
+  kannadaFirst = !kannadaFirst;
+  document.querySelectorAll(".kannada").forEach(el => {
+    el.style.order = kannadaFirst ? "0" : "1";
+    el.style.opacity = kannadaFirst ? "1" : ".78";
+  });
+  document.documentElement.lang = kannadaFirst ? "en" : "kn";
+  document.getElementById("languageToggle").textContent = kannadaFirst ? "ಕನ್ನಡ / English" : "English / ಕನ್ನಡ";
+});
+</script>
+</body>
+</html>
